@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --index: calc(1vw + 1vh);
+    --color-header: #ffffff;
+    --color-text: #cdc6c3;
+    --gallery-gap: calc(var(--index) * 15)
+}
+@font-face {
+    font-family: raleway-r;
+    src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+    font-family: outfit-r;
+    src: url(../fonts/outfit-regular.woff2);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: outfit-r;
+}
+/*will change */
+.content, .header-img, .main-header, .gallery__left, .gallery__right {
+    will-change: transform;
+}
+body {
+    background-image: url(../img/bg.jpg);
+    background-size: 50px;
+    color: #fafafa;
+    font-family: raleway-r;
+    overflow-x: hidden;
+}
+.header-img {
+    width: calc(var(--index) * 26);
+		height: 100vh;
+    position: absolute;
+    left: 57vw;
+    
+}
+.header::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+
+  background-color: #000000;
+  opacity: 0.3;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.main-header {
+    height: 100vh;
+		color: var(--color-header);
+		opacity: 0.9;
+		position: relative;
+		z-index: 20;
+}
+.container {
+    padding: 0 10vw 0;
+}
+.main-title {
+    font-size: calc(var(--index) * 8);
+    position: absolute;
+    width: min-content;
+    bottom: 20vh;
+    line-height: .9;
+}
+.gallery {
+    display: flex;
+    padding: calc(var(--index) * 8) 0;
+}
+.gallery > * {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.gallery__item {
+    max-width: calc(var(--index) * 22);
+    margin-bottom: var(--gallery-gap);
+    max-height: 90vh;
+    border-radius: 8px;
+		object-fit: cover;
+}
+.gallery__left {
+    margin-top: calc(var(--gallery-gap) * 1.2);
+}
+.gallery__right {
+    margin: 0;
+    margin-top: calc(var(--gallery-gap) * 1.2);
+}
+.text-block {
+    color: var(--color-text);
+    position: relative;
+}
+.text-block__h {
+    font-size: 1.7rem;
+    line-height: 2.1rem;
+    color: var(--color-header);
+    margin-bottom: 1.5rem;
+}
+.text-block__p {
+    line-height: 1.7;
+}
